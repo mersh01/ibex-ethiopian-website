@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibex Ethiopian Bar & Restaurant - Full Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Black & Gold Color Palette */
+            --color-black: #0A0A0A;
+            --color-dark: #1A1A1A;
+            --color-dark-gray: #2A2A2A;
+            --color-medium-gray: #3A3A3A;
+            --color-light-gray: #4A4A4A;
+            --color-lighter-gray: #5A5A5A;
+            --color-gold: #D4AF37;
+            --color-gold-light: #E6C158;
+            --color-gold-dark: #B8941F;
+            --color-white: #FFFFFF;
+            --color-off-white: #F5F5F5;
+            --color-text: #E0E0E0;
+            --color-text-light: #A0A0A0;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+            --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.2);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50%;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-black);
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .bg-light {
+            background-color: var(--color-dark);
+        }
+        
+        /* Header - Consistent with index page */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            padding: 10px 0;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--color-white);
+        }
+        
+        .logo-highlight {
+            color: var(--color-gold);
+        }
+        
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--color-gold);
+            letter-spacing: 1.5px;
+            margin-top: -5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-normal);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .nav-links a span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-normal);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--color-gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.7)), 
+                        url('images/gallery/8.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--color-gold);
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--color-white);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-normal);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-gold);
+            z-index: -1;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .btn:hover::before {
+            transform: translateX(0);
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn i {
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-gold);
+            color: var(--color-black);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .btn-primary:hover {
+            color: var(--color-black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+        }
+        
+        /* Menu Navigation */
+        .menu-nav {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .menu-category {
+            padding: 12px 24px;
+            background: var(--color-dark-gray);
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: var(--transition-normal);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .menu-category:hover,
+        .menu-category.active {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+            border-color: var(--color-gold);
+        }
+        
+        .menu-category i {
+            font-size: 1rem;
+        }
+        
+        /* Menu Section */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .category-badge {
+            display: inline-block;
+            padding: 10px 24px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--color-gold);
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(5px);
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        
+        .divider-line {
+            width: 60px;
+            height: 1px;
+            background-color: var(--color-gold);
+            opacity: 0.5;
+        }
+        
+        .divider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-gold);
+        }
+        
+        /* Menu Items Grid */
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-card {
+            background: var(--color-dark-gray);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-normal);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(212, 175, 55, 0.05);
+            position: relative;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        .special-item {
+            border: 2px solid var(--color-gold);
+        }
+        
+        .special-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--color-gold);
+            color: var(--color-black);
+            padding: 6px 15px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.8rem;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .menu-image-container {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .menu-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .menu-card:hover .menu-image {
+            transform: scale(1.05);
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold-light);
+        }
+        
+        .image-placeholder i {
+            font-size: 3rem;
+            opacity: 0.6;
+        }
+        
+        .photo-count {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .menu-card-header {
+            padding: 1.5rem 1.5rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .menu-card-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-card h3 {
+            font-size: 1.3rem;
+            color: var(--color-white);
+            margin-right: 10px;
+            flex: 1;
+        }
+        
+        .menu-amharic {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--color-gold);
+            font-style: italic;
+            margin-top: 0.2rem;
+            font-weight: 300;
+        }
+        
+        .menu-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            white-space: nowrap;
+        }
+        
+        .menu-description {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 1rem;
+        }
+        
+        .menu-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--color-gold);
+            padding: 5px 12px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .menu-tag.spicy {
+            background: rgba(255, 87, 87, 0.1);
+            color: #FF5757;
+            border-color: rgba(255, 87, 87, 0.2);
+        }
+        
+        .menu-tag.signature {
+            background: rgba(255, 193, 7, 0.1);
+            color: #FFC107;
+            border-color: rgba(255, 193, 7, 0.2);
+        }
+        
+        .menu-tag.vegetarian {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+            border-color: rgba(76, 175, 80, 0.2);
+        }
+        
+        .menu-card-footer {
+            padding: 1rem 1.5rem 1.5rem;
+            margin-top: auto;
+        }
+        
+        .menu-options {
+            background: rgba(212, 175, 55, 0.05);
+            padding: 12px 15px;
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            border-left: 4px solid var(--color-gold);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .menu-options strong {
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+        
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-black) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .cta h2 {
+            font-size: 2.8rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--color-dark);
+            padding: 5rem 0 2rem;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .footer-tagline {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+        
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-hours h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-gold);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p,
+        .footer-hours p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-text-light);
+        }
+        
+        .footer-contact i,
+        .footer-hours i {
+            color: var(--color-gold);
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--color-gold);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        .social-links a:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--color-gold);
+            color: var(--color-black);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .menu-card:nth-child(1) { animation-delay: 0.1s; }
+        .menu-card:nth-child(2) { animation-delay: 0.2s; }
+        .menu-card:nth-child(3) { animation-delay: 0.3s; }
+        .menu-card:nth-child(4) { animation-delay: 0.4s; }
+        .menu-card:nth-child(5) { animation-delay: 0.5s; }
+        .menu-card:nth-child(6) { animation-delay: 0.6s; }
+        .menu-card:nth-child(7) { animation-delay: 0.7s; }
+        .menu-card:nth-child(8) { animation-delay: 0.8s; }
+        .menu-card:nth-child(9) { animation-delay: 0.9s; }
+        .menu-card:nth-child(10) { animation-delay: 1s; }
+        .menu-card:nth-child(11) { animation-delay: 1.1s; }
+        .menu-card:nth-child(12) { animation-delay: 1.2s; }
+        .menu-card:nth-child(13) { animation-delay: 1.3s; }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .menu-items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition-normal);
+                border-top: 1px solid rgba(212, 175, 55, 0.1);
+                box-shadow: var(--shadow-xl);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 100px 0;
+                height: 60vh;
+                min-height: 400px;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                margin-bottom: 10px;
+            }
+            
+            .menu-categories {
+                gap: 10px;
+            }
+            
+            .menu-category {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            .menu-nav {
+                top: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .menu-items-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .menu-card-header {
+                padding: 1.25rem 1.25rem 0.75rem;
+            }
+            
+            .menu-card-footer {
+                padding: 0.75rem 1.25rem 1.25rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1><span class="logo-highlight">Ibex</span> Ethiopian</h1>
+                    <p class="logo-subtitle">Bar & Restaurant</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Full Menu</div>
+                <h1 class="hero-title">Ibex Ethiopian Menu</h1>
+                <p class="hero-subtitle">Authentic Ethiopian Cuisine & Bar</p>
+                <p class="hero-description">Experience the rich flavors of Ethiopia with our traditional dishes, carefully prepared with authentic spices and recipes passed down through generations.</p>
+                <div class="hero-buttons">
+                    <a href="#appetizers" class="btn btn-primary">Explore Full Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <section class="menu-nav">
+        <div class="container">
+            <div class="menu-categories">
+                <a href="#appetizers" class="menu-category active">
+                    <i class="fas fa-utensils"></i> Appetizers
+                </a>
+                <a href="#breakfast" class="menu-category">
+                    <i class="fas fa-egg"></i> Breakfast
+                </a>
+                <a href="#lunch-dinner" class="menu-category">
+                    <i class="fas fa-drumstick-bite"></i> Lunch & Dinner
+                </a>
+                <a href="#sandwiches" class="menu-category">
+                    <i class="fas fa-hamburger"></i> Sandwiches
+                </a>
+                <a href="#vegetarian" class="menu-category">
+                    <i class="fas fa-leaf"></i> Vegetarian
+                </a>
+                <a href="#kids" class="menu-category">
+                    <i class="fas fa-child"></i> Kids Menu
+                </a>
+                <a href="#drinks" class="menu-category">
+                    <i class="fas fa-glass-cheers"></i> Drinks
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers Section -->
+    <section id="appetizers" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Appetizers</span>
+                <h2 class="section-title">Start Your Journey</h2>
+                <p class="section-subtitle">Begin your Ethiopian dining experience with these traditional starters</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <!-- Appetizer Items -->
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/appetizers/1.jpg" alt="Sambusa" class="menu-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgZmlsbD0iIzJBMkEyQSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmaWxsPSIjRDA0QUYzNyI+U2FtYnVzYTwvdGV4dD48L3N2Zz4='">
+                        <div class="photo-count">Popular</div>
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Sambusa <span class="menu-amharic">ሳምቡሳ</span></h3>
+                            <span class="menu-price">$5.99</span>
+                        </div>
+                        <p class="menu-description">Two pieces of crispy pastry shell filled with lentil, onion, and jalapeño pepper.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian Option</span>
+                            <span class="menu-tag spicy">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/appetizers/2.jpg" alt="House Salad" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>House Salad <span class="menu-amharic">ሰላጣ</span></h3>
+                            <span class="menu-price">$13.99</span>
+                        </div>
+                        <p class="menu-description">Fresh lettuce, tomatoes, onions, and pepper with Ibex house dressing.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/appetizers/3.jpg" alt="Salad with Tuna" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Salad with Tuna <span class="menu-amharic">ሰላጣ በ ቱና</span></h3>
+                            <span class="menu-price">$14.99</span>
+                        </div>
+                        <p class="menu-description">Fresh lettuce, tomatoes, onions, and pepper with an Ibex house dressing with tuna.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/appetizers/4.jpg" alt="Chicken Wings" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Chicken Wings <span class="menu-amharic">የ ዶሮ ጥብስ</span></h3>
+                            <span class="menu-price">$12.99</span>
+                        </div>
+                        <p class="menu-description">8 pieces of lightly breaded chicken drums, deep fried to golden brown, coated in your choice of hot or mild sauce.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag spicy">Spicy Option</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/appetizers/5.jpg" alt="Tomato Fitfit" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Tomato Fitfit <span class="menu-amharic">ቲማቲም ፍትፍት</span></h3>
+                            <span class="menu-price">$13.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of injera tossed with diced tomatoes, red onion, jalapeño peppers, and soaked in tangy lemon dressing.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breakfast Section -->
+    <section id="breakfast" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Breakfast</span>
+                <h2 class="section-title">Morning Traditions</h2>
+                <p class="section-subtitle">Traditional Ethiopian breakfast dishes to start your day</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <!-- Breakfast Items -->
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/1.jpg" alt="Ful" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Ful <span class="menu-amharic">ፉል</span></h3>
+                            <span class="menu-price">$12.99</span>
+                        </div>
+                        <p class="menu-description">Simmered beans crushed and mixed with olive oil and garnished with fresh onion, tomato and jalapeños.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/2.jpg" alt="Scrambled Egg" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Scrambled Egg <span class="menu-amharic">እንቁላል ፍርፍር</span></h3>
+                            <span class="menu-price">$13.99</span>
+                        </div>
+                        <p class="menu-description">Eggs scrambled with tomato and jalapeño served with your choice of injera or bread.</p>
+                        <div class="menu-options">
+                            <strong>Served with:</strong> Choice of injera or bread
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up special-item">
+                    <div class="special-badge">Chef's Special</div>
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/3.jpg" alt="Egg with Beef" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Egg with Beef <span class="menu-amharic">እንቁላል በ ስጋ</span></h3>
+                            <span class="menu-price">$15.99</span>
+                        </div>
+                        <p class="menu-description">Eggs scrambled with ground lean beef, tomato, chopped onions and jalapeño served with your choice of injera or bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/4.jpg" alt="Kita Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Kita Firfir <span class="menu-amharic">ቂጣ ፍርፍር</span></h3>
+                            <span class="menu-price">$15.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of kita mixed with special blend of onion, tomato, garlic, and berbere sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/5.jpg" alt="Dabo Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Dabo Firfir <span class="menu-amharic">ዳቦ ፍርፍር</span></h3>
+                            <span class="menu-price">$12.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of bread mixed with special blend of onion, tomato, garlic, and berbere sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/6.jpg" alt="Injera Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Injera Firfir <span class="menu-amharic">እንጀራ ፍርፍር</span></h3>
+                            <span class="menu-price">$13.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of injera mixed with special blend of onion, tomato, garlic, and berbere sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/7.jpg" alt="Tuna Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Tuna Firfir <span class="menu-amharic">ፍርፍር በ ቱና</span></h3>
+                            <span class="menu-price">$14.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of your choice of injera or bread mixed with special blend of onion, tomato, garlic, and berbere sauce with added tuna.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/8.jpg" alt="Quanta Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Quanta Firfir <span class="menu-amharic">ቋንጣ ፍርፍር</span></h3>
+                            <span class="menu-price">$16.99</span>
+                        </div>
+                        <p class="menu-description">Dried beef jerky cooked with special blend of onion, tomato, garlic, and berbere sauce tossed with pieces of injera.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/9.jpg" alt="Kinche" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Kinche <span class="menu-amharic">ቂንጬ</span></h3>
+                            <span class="menu-price">$9.99</span>
+                        </div>
+                        <p class="menu-description">Cracked wheat cooked in herb filtered spiced butter and flavored with Ethiopian spices.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/10.jpg" alt="Avocado Sils" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Avocado Sils <span class="menu-amharic">አቮካዶ</span></h3>
+                            <span class="menu-price">$11.99</span>
+                        </div>
+                        <p class="menu-description">A special blend of diced tomato onion garlic and berbere sauce topped with fresh-cut avocado pieces served with bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/11.jpg" alt="Suf Fitfit" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Suf Fitfit <span class="menu-amharic">ሱፍ ፍትፍት</span></h3>
+                            <span class="menu-price">$11.99</span>
+                        </div>
+                        <p class="menu-description">Sunflower seed juice tossed with pieces of injera topped with diced tomato onion pepper.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/12.jpg" alt="Tibs Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Tibs Firfir <span class="menu-amharic">ጥብስ ፍርፍር</span></h3>
+                            <span class="menu-price">$17.99</span>
+                        </div>
+                        <p class="menu-description">Tender cubed beef sautéed with tomato onion and berbere tossed with pieces of injera.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/breakfast/13.jpg" alt="Egg Sandwich" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Egg Sandwich <span class="menu-amharic">እንቁላል ሳንድዊች</span></h3>
+                            <span class="menu-price">$10.99</span>
+                        </div>
+                        <p class="menu-description">Pan-fried egg served with bread as a sandwich.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sandwiches Section -->
+    <section id="sandwiches" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Sandwiches & More</span>
+                <h2 class="section-title">Quick Bites</h2>
+                <p class="section-subtitle">Ethiopian-inspired sandwiches and light meals</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <div class="menu-card fade-in-up special-item">
+                    <div class="special-badge">Signature</div>
+                    <div class="menu-image-container">
+                        <img src="images/menu/sandwiches/3.jpg" alt="Ibex Cheesesteak Sandwich" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Ibex Cheesesteak Sandwich</h3>
+                            <span class="menu-price">$12.99</span>
+                        </div>
+                        <p class="menu-description">An Ethiopian twist on the Philly favorite. Your choice of beef or chicken sautéed with onions, jalapeño pepper, tomato, and cheese. Served on a wheat sub roll.</p>
+                        <div class="menu-options">
+                            <strong>Choice of:</strong> Beef or Chicken
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/sandwiches/4.jpg" alt="Fish Sandwich" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Fish Sandwich <span class="menu-amharic">አሳ ሳንድዊች</span></h3>
+                            <span class="menu-price">$11.99</span>
+                        </div>
+                        <p class="menu-description">Tilapia fried to perfection with lettuce and tomatoes in a bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/sandwiches/1.jpg" alt="Rice" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Rice <span class="menu-amharic">ሩዝ</span></h3>
+                            <span class="menu-price">$18.99</span>
+                        </div>
+                        <p class="menu-description">White rice steamed in olive oil and sea salt. Served with your choice of protein sautéed with onion, tomato, garlic and a spicy cajun sauce.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lunch & Dinner Section -->
+    <section id="lunch-dinner" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Lunch & Dinner</span>
+                <h2 class="section-title">Main Courses</h2>
+                <p class="section-subtitle">Traditional Ethiopian main dishes for lunch and dinner</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <!-- Lunch & Dinner Items -->
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/8.jpg" alt="Minchet" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Minchet <span class="menu-amharic">ምንቸት</span></h3>
+                            <span class="menu-price">$16.99</span>
+                        </div>
+                        <p class="menu-description">Finely chopped lean ground beef simmered in a blend of minced ginger onion garlic and berbere sauce served with hardboiled egg.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/2.jpg" alt="Misto" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Misto <span class="menu-amharic">ሚስቶ</span></h3>
+                            <span class="menu-price">$17.99</span>
+                        </div>
+                        <p class="menu-description">Two of our most popular spicy and non spicy beef stews served on a bed of injera with a side of ayb Ethiopian cheese.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag spicy">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/3.jpg" alt="Gomen Besiga" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Gomen Besiga <span class="menu-amharic">ጎመን በስጋ</span></h3>
+                            <span class="menu-price">$16.99</span>
+                        </div>
+                        <p class="menu-description">Chopped collard greens cooked with onion garlic and cubed meat spiced and purified with Ethiopian butter.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/4.jpg" alt="Banatu" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Banatu <span class="menu-amharic">ባናቱ</span></h3>
+                            <span class="menu-price">$20.99</span>
+                        </div>
+                        <p class="menu-description">Tibs firfir topped with kitfo and ayb with boiled egg.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/26.jpg" alt="Mahberawi" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Mahberawi <span class="menu-amharic">ማህበራዊ</span></h3>
+                            <span class="menu-price">$20.99</span>
+                        </div>
+                        <p class="menu-description">A variety of all of our special meat stews served in a bed of injera.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag signature">Specialty</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/6.jpg" alt="Kintot" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Kintot <span class="menu-amharic">ቅንጦት</span></h3>
+                            <span class="menu-price">$20.99</span>
+                        </div>
+                        <p class="menu-description">Delicious beef stew served in a bed of injera along with all of our veggie dishes.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/7.jpg" alt="Afghan" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Afghan <span class="menu-amharic">አፋኝ</span></h3>
+                            <span class="menu-price">$19.99</span>
+                        </div>
+                        <p class="menu-description">Well chopped lean beef cooked well with onion pepper and Ethiopian spiced butter.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up special-item">
+                    <div class="special-badge">Popular</div>
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/8.jpg" alt="Kitfo" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Kitfo <span class="menu-amharic">ክትፎ</span></h3>
+                            <span class="menu-price">$19.99</span>
+                        </div>
+                        <p class="menu-description">Beef tartare seasoned with our homemade Ethiopian herbal butter, mitmita (red chili spice blend) and cardamom ordered to your choice of raw, medium or well done. Served with homemade Ethiopian cheese.</p>
+                        <div class="menu-options">
+                            <strong>Cooked to order:</strong> Raw | Medium | Well Done
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/9.jpg" alt="Ibex Special Kitfo" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Ibex Special Kitfo <span class="menu-amharic">ክትፎ</span></h3>
+                            <span class="menu-price">$19.99</span>
+                        </div>
+                        <p class="menu-description">Beef tartare seasoned with our homemade Ethiopian herbal butter, mitmita (red chili spice blend), and cardamom ordered to your choice of raw, medium or well done. Served with homemade Ethiopian cheese and collard greens.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/10.jpg" alt="Tibs" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Tibs <span class="menu-amharic">ጥብስ</span></h3>
+                            <span class="menu-price">$16.99</span>
+                        </div>
+                        <p class="menu-description">Your choice of seasoned and cubed protein sautéed with onion jalapeño tomato and rosemary served with mitmita injera and a side salad.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/11.jpg" alt="Awaze Tibs" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Awaze Tibs <span class="menu-amharic">ጥብስ</span></h3>
+                            <span class="menu-price">$17.99</span>
+                        </div>
+                        <p class="menu-description">Seasoned and cubed tender lamb chicken or beef sautéed with ibex's awaze sauce special blend of Ethiopian spices and chili paste tomatoes onions jalapeños served with injera and a side salad.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/12.jpg" alt="Lega Tibs" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Lega Tibs <span class="menu-amharic">ለጋ ጥብስ</span></h3>
+                            <span class="menu-price">$17.99</span>
+                        </div>
+                        <p class="menu-description">Tender beef cubed sautéed with onion, jalapeño pepper, and Ethiopian spice butter. Served medium rare.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/13.jpg" alt="Gored Gored" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Gored Gored <span class="menu-amharic">ጎረድ ጎረድ</span></h3>
+                            <span class="menu-price">$18.99</span>
+                        </div>
+                        <p class="menu-description">Chunked cubed beef awaze sauce onions and peppers cooked with butter.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up special-item">
+                    <div class="special-badge">Ibex Special</div>
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/14.jpg" alt="Ibex Special" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Ibex Special <span class="menu-amharic">አይቤክስ ደረቅ ጥብስ</span></h3>
+                            <span class="menu-price">$19.99</span>
+                        </div>
+                        <p class="menu-description">Very lean beef cubes fried to a perfect crisp with onion and pepper, served sizzling on fajita pan.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/15.jpg" alt="Zilzil Tibs" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Zilzil Tibs <span class="menu-amharic">ዝልዝል ጥብስ</span></h3>
+                            <span class="menu-price">$19.99</span>
+                        </div>
+                        <p class="menu-description">Stripes of beef sautéed and seasoned with Ethiopian butter, onion, garlic, and jalapeño.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/16.jpg" alt="Bozena Shiro" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Bozena Shiro <span class="menu-amharic">ቦዘና ሽሮ</span></h3>
+                            <span class="menu-price">$14.99</span>
+                        </div>
+                        <p class="menu-description">Roasted and powdered chickpeas cooked with beef cubes, onion, tomato, garlic, and Ethiopian spice butter.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/17.jpg" alt="Potato Stew" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Potato Stew <span class="menu-amharic">ድንች ወጥ</span></h3>
+                            <span class="menu-price">$15.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of potatoes cooked with cubed beef in a blend of special sauce.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/18.jpg" alt="Fish Dulet" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Fish Dulet <span class="menu-amharic">አሳ ዱለት</span></h3>
+                            <span class="menu-price">$17.99</span>
+                        </div>
+                        <p class="menu-description">Well chopped tilapia pan sautéed with olive oil onion tomato garlic and green pepper. Served with injera bread.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/lunch-dinner/19.jpg" alt="Fish Stew" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Fish Stew <span class="menu-amharic">አሳ ለብለብ</span></h3>
+                            <span class="menu-price">$17.99</span>
+                        </div>
+                        <p class="menu-description">Chopped tilapia spiced and sautéed with olive oil onion tomato garlic and green pepper.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vegetarian Section -->
+    <section id="vegetarian" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Vegetarian</span>
+                <h2 class="section-title">Plant-Based Delights</h2>
+                <p class="section-subtitle">Traditional Ethiopian vegetarian and vegan dishes</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <div class="menu-card fade-in-up special-item">
+                    <div class="special-badge">Popular</div>
+                    <div class="menu-image-container">
+                        <img src="images/menu/vegetarian/1.jpg" alt="Vegetarian Combo" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Vegetarian Combo <span class="menu-amharic">የጾም / በየአይነቱ</span></h3>
+                            <span class="menu-price">$18.99</span>
+                        </div>
+                        <p class="menu-description">A variety of vegan-friendly veggie dishes served on a bed of injera. Lentil and chickpea stew, cabbage, potato and carrot medley, Ethiopian style collard greens and a green bean and carrot stir fry.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegan</span>
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/vegetarian/2.jpg" alt="Shiro Wot" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Shiro Wot <span class="menu-amharic">ሽሮ ወጥ</span></h3>
+                            <span class="menu-price">$16.99</span>
+                        </div>
+                        <p class="menu-description">Ground chickpeas prepared with olive oil, minced onions, garlic, ground ginger, chopped tomatoes, and berbere spice.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/vegetarian/3.jpg" alt="Injera Firfir" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Injera Firfir <span class="menu-amharic">እንጀራ ፍርፍር</span></h3>
+                            <span class="menu-price">$16.99</span>
+                        </div>
+                        <p class="menu-description">Pieces of injera mixed with a special blend of onion tomato garlic and berbere sauce.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/vegetarian/4.jpg" alt="Suf Fitfit" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Suf Fitfit <span class="menu-amharic">ሱፍ ፍትፍት</span></h3>
+                            <span class="menu-price">$14.99</span>
+                        </div>
+                        <p class="menu-description">Sunflower seed juice tossed with pieces of injera topped with diced tomato onion pepper.</p>
+                        <div class="menu-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids Menu Section -->
+    <section id="kids" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Kids Menu</span>
+                <h2 class="section-title">Little Adventurers</h2>
+                <p class="section-subtitle">Kid-friendly options for our youngest guests</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/kids/1.jpg" alt="Chicken Nuggets & Fries" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Chicken Nuggets & Fries</h3>
+                            <span class="menu-price">$11.99</span>
+                        </div>
+                        <p class="menu-description">All-natural chicken lightly breaded and fried served with fries.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/kids/2.jpg" alt="Mac n Cheese" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Mac n Cheese</h3>
+                            <span class="menu-price">$11.99</span>
+                        </div>
+                        <p class="menu-description">All-natural macaroni and melted cheese.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section id="drinks" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="category-badge">Drinks</span>
+                <h2 class="section-title">Refreshments</h2>
+                <p class="section-subtitle">Beverages to complement your meal</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="menu-items-grid">
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/drinks/1.jpg" alt="Smoothie" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Smoothie</h3>
+                            <span class="menu-price">$9.99</span>
+                        </div>
+                        <p class="menu-description">A blend of fresh mango, strawberry, banana, pineapple and blueberry.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/drinks/2.jpg" alt="Papaya Smoothie" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Papaya Smoothie</h3>
+                            <span class="menu-price">$8.99</span>
+                        </div>
+                        <p class="menu-description">Freshly cut papayas blended up to perfection.</p>
+                    </div>
+                </div>
+                
+                <div class="menu-card fade-in-up">
+                    <div class="menu-image-container">
+                        <img src="images/menu/drinks/3.jpg" alt="Coke Products" class="menu-image" onerror="this.onerror=null; this.src='images/placeholder.jpg';">
+                    </div>
+                    <div class="menu-card-header">
+                        <div class="menu-card-title">
+                            <h3>Coke Products</h3>
+                            <span class="menu-price">$2.99</span>
+                        </div>
+                        <p class="menu-description">The cold, refreshing, sparkling classic that America loves.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ready to Experience Authentic Ethiopian Cuisine?</h2>
+                <p class="section-subtitle">Join us at Ibex Ethiopian Bar & Restaurant for an unforgettable dining experience.</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><span class="logo-highlight">Ibex</span> Ethiopian</h3>
+                    <p class="logo-subtitle">Bar & Restaurant</p>
+                    <p class="footer-tagline">Authentic Ethiopian flavors served with heart.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 1024 Shady Lane Rd, Columbus, OH</p>
+                    <p><i class="fas fa-phone"></i> (614) 694-2200</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p><i class="fas fa-clock"></i> Tue-Thu: 11AM-11PM</p>
+                    <p><i class="fas fa-clock"></i> Fri-Sat: 11AM-2:30AM</p>
+                    <p><i class="fas fa-clock"></i> Sun: 9AM-11PM</p>
+                    <p><i class="fas fa-clock"></i> Mon: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                <p class="copyright">&copy; 2026 Ibex Ethiopian Bar & Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Menu Navigation Smooth Scroll
+        document.querySelectorAll('.menu-category').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    // Update active menu category
+                    document.querySelectorAll('.menu-category').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    // Scroll to section
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update active menu category on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY + 200;
+            
+            document.querySelectorAll('section[id]').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.menu-category').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Animate menu cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.menu-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Adjust nav display on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Initialize all menu cards with fade-in-up class
+        document.querySelectorAll('.menu-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.05}s`;
+        });
+    </script>
+</body>
+</html>

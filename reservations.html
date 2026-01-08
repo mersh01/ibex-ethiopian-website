@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations | Ibex Ethiopian Bar & Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1><span class="logo-highlight">Ibex</span> Ethiopian</h1>
+                    <p class="logo-subtitle">Bar & Restaurant</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="reservations.html" class="active">Reservations</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Reservation Hero -->
+    <section class="hero" style="height: 50vh; min-height: 400px;">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Reservations</h2>
+                <p class="hero-subtitle">Secure Your Table for an Authentic Experience</p>
+                <p class="hero-description">Book in advance to ensure the best dining experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Form & Info -->
+    <section class="reservation-section section-padding">
+        <div class="container">
+            <div class="reservation-grid">
+                <div class="reservation-form-container">
+                    <div class="section-header">
+                        <h2 class="section-title">Book Your Table</h2>
+                        <p class="section-subtitle">We recommend reservations, especially for groups</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    
+                    <form class="reservation-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests *</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="" disabled selected>Select guests</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5">5 People</option>
+                                    <option value="6">6 People</option>
+                                    <option value="7">7 People</option>
+                                    <option value="8">8 People</option>
+                                    <option value="9">9+ People</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="date">Preferred Date *</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="time">Preferred Time *</label>
+                                <select id="time" name="time" required>
+                                    <option value="" disabled selected>Select time</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                    <option value="22:00">10:00 PM</option>
+                                    <option value="23:00">11:00 PM</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="occasion">Special Occasion</label>
+                                <select id="occasion" name="occasion">
+                                    <option value="" selected>No special occasion</option>
+                                    <option value="birthday">Birthday</option>
+                                    <option value="anniversary">Anniversary</option>
+                                    <option value="date">Date Night</option>
+                                    <option value="business">Business Dinner</option>
+                                    <option value="celebration">Celebration</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="requests">Special Requests</label>
+                            <textarea id="requests" name="requests" rows="4" placeholder="Any dietary requirements, allergies, or special requests..."></textarea>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 18px; font-size: 1.1rem;">
+                            Confirm Reservation
+                        </button>
+                        
+                        <p class="form-note">* Required fields. We'll contact you to confirm your reservation within 24 hours.</p>
+                    </form>
+                </div>
+                
+                <div class="reservation-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Hours</h3>
+                        <p><strong>Tuesday - Thursday:</strong> 11:00 AM - 11:00 PM</p>
+                        <p><strong>Friday - Saturday:</strong> 11:00 AM - 2:30 AM</p>
+                        <p><strong>Sunday:</strong> 9:00 AM - 11:00 PM</p>
+                        <p><strong>Monday:</strong> Closed</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+                        <h3>Reservation Policy</h3>
+                        <ul class="policy-list">
+                            <li>Reservations held for 15 minutes past booking time</li>
+                            <li>Groups of 6+ require 24-hour notice for cancellation</li>
+                            <li>Special dietary needs accommodated with advance notice</li>
+                            <li>Outside desserts subject to $15 plating fee</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Large Groups & Events</h3>
+                        <p>Planning a special event or large group gathering? Contact us directly for private dining options and group reservations.</p>
+                        <a href="contact.html" class="btn btn-outline" style="margin-top: 15px;">Inquire About Events</a>
+                    </div>
+                                        <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Location & Parking</h3>
+                        <p><strong>Address:</strong> 1024 Shady Lane Rd, Columbus, OH 43227</p>
+                        <p><strong>Parking:</strong> Free rear lot parking available</p>
+                        <p><strong>Transit:</strong> Bus lines 5, 12, 22 stop nearby</p>
+                        <a href="contact.html#map" class="btn btn-outline" style="margin-top: 15px; width: 100%;">
+                            <i class="fas fa-directions"></i> View Map & Directions
+                        </a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Contact for Reservations</h3>
+                        <p>Prefer to book by phone? Call us during business hours:</p>
+                        <p class="phone-number"><i class="fas fa-phone"></i> (614) 694-2200</p>
+                        <p>Or email: <a href="mailto:reservations@ibexethiopian.com">reservations@ibexethiopian.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Walk-Ins Welcome</h2>
+                <p>Don't have a reservation? We always try to accommodate walk-in guests based on availability.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">Get Directions</a>
+                    <a href="menu.html" class="btn btn-secondary">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><span class="logo-highlight">Ibex</span> Ethiopian</h3>
+                    <p class="logo-subtitle">Bar & Restaurant</p>
+                    <p class="footer-tagline">Authentic Ethiopian flavors served with heart.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 1024 Shady Lane Rd, Columbus, OH</p>
+                    <p><i class="fas fa-phone"></i> (614) 694-2200</p>
+                    <p><i class="fas fa-envelope"></i> info@ibexethiopian.com</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p>Tue-Thu: 11AM-11PM</p>
+                    <p>Fri-Sat: 11AM-2:30AM</p>
+                    <p>Sun: 9AM-11PM</p>
+                    <p>Mon: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                                
+                <p class="copyright">&copy; <span class="current-year">2024</span> Ibex Ethiopian Bar & Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+            
+            // Set default date to tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
+            dateInput.value = tomorrowFormatted;
+        });
+    </script>
+        <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+</body>
+</html>

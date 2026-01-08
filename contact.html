@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ibex Ethiopian Bar & Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Black & Gold Color Palette */
+            --color-black: #0A0A0A;
+            --color-dark: #1A1A1A;
+            --color-dark-gray: #2A2A2A;
+            --color-medium-gray: #3A3A3A;
+            --color-light-gray: #4A4A4A;
+            --color-lighter-gray: #5A5A5A;
+            --color-gold: #D4AF37;
+            --color-gold-light: #E6C158;
+            --color-gold-dark: #B8941F;
+            --color-white: #FFFFFF;
+            --color-off-white: #F5F5F5;
+            --color-text: #E0E0E0;
+            --color-text-light: #A0A0A0;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.6);
+            --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.2);
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50%;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-black);
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .bg-light {
+            background-color: var(--color-dark);
+        }
+        
+        /* Header - Consistent with index page */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            transition: var(--transition-normal);
+        }
+        
+        .header.scrolled {
+            padding: 10px 0;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--color-white);
+        }
+        
+        .logo-highlight {
+            color: var(--color-gold);
+        }
+        
+        .logo-subtitle {
+            font-size: 0.7rem;
+            color: var(--color-gold);
+            letter-spacing: 1.5px;
+            margin-top: -5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .nav-links li {
+            position: relative;
+        }
+        
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-normal);
+            position: relative;
+            padding: 8px 0;
+        }
+        
+        .nav-links a span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--color-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition-normal);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--color-gold);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            cursor: pointer;
+            transition: var(--transition-normal);
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--color-gold);
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.7)), 
+                        url('./images/gallery/18.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--color-gold);
+            padding: 8px 20px;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            color: var(--color-white);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Contact Info Cards */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background: var(--color-dark-gray);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            transition: var(--transition-normal);
+            border: 1px solid rgba(212, 175, 55, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--color-gold);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition-normal);
+        }
+        
+        .contact-card:hover .contact-icon {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+        }
+        
+        .contact-card p {
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .contact-card strong {
+            color: var(--color-white);
+            font-weight: 600;
+        }
+        
+        .contact-phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            margin: 1rem 0;
+        }
+        
+        .link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--color-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition-normal);
+            border-bottom: 1px solid transparent;
+        }
+        
+        .link:hover {
+            border-bottom-color: var(--color-gold);
+        }
+        
+        /* Contact Form & Map Grid */
+        .form-map-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        @media (max-width: 992px) {
+            .form-map-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Contact Form */
+        .contact-form-container {
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+        
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2rem;
+        }
+        
+        .divider-line {
+            width: 60px;
+            height: 1px;
+            background-color: var(--color-gold);
+            opacity: 0.5;
+        }
+        
+        .divider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: var(--radius-full);
+            background-color: var(--color-gold);
+        }
+        
+        .contact-form {
+            background: var(--color-dark-gray);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(212, 175, 55, 0.05);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 576px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--color-white);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        .form-group label:after {
+            content: ' *';
+            color: var(--color-gold);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--color-black);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: var(--radius-md);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition-normal);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--color-text-light);
+            opacity: 0.7;
+        }
+        
+        .form-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 2rem 0;
+        }
+        
+        .form-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-gold);
+        }
+        
+        .form-checkbox label {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+        
+        /* Map Container */
+        .map-container {
+            position: relative;
+        }
+        
+        .map-wrapper {
+            background: var(--color-dark-gray);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.05);
+        }
+        
+        .map-frame {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(100%) contrast(1.1);
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 40%, rgba(10, 10, 10, 0.9));
+            pointer-events: none;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+        
+        .map-info-card {
+            background: rgba(10, 10, 10, 0.9);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            backdrop-filter: blur(10px);
+            pointer-events: auto;
+            max-width: 400px;
+        }
+        
+        .map-info-card h3 {
+            font-size: 1.2rem;
+            color: var(--color-gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .map-info-card p {
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .map-info-card strong {
+            color: var(--color-white);
+            font-weight: 600;
+        }
+        
+        .map-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--color-gold);
+            color: var(--color-black);
+            text-decoration: none;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-normal);
+        }
+        
+        .btn-map:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        /* Transportation Info */
+        .transportation-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.05);
+        }
+        
+        .transport-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .transport-item i {
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            margin-top: 5px;
+        }
+        
+        .transport-item h4 {
+            font-size: 1rem;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .transport-item p {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--color-dark-gray);
+            border-radius: var(--radius-lg);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.05);
+            transition: var(--transition-normal);
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        .faq-question {
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-normal);
+        }
+        
+        .faq-question:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+        
+        .faq-question h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            color: var(--color-white);
+            flex: 1;
+        }
+        
+        .faq-question i {
+            color: var(--color-gold);
+            font-size: 1rem;
+            transition: var(--transition-normal);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            opacity: 0;
+            padding: 0 2rem;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+            padding: 0 2rem 2rem 2rem;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer p {
+            color: var(--color-text-light);
+            line-height: 1.8;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-black) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 2.8rem;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-normal);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-gold);
+            z-index: -1;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .btn:hover::before {
+            transform: translateX(0);
+        }
+        
+        .btn span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn i {
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-primary {
+            background-color: var(--color-gold);
+            color: var(--color-black);
+            box-shadow: var(--shadow-gold);
+        }
+        
+        .btn-primary:hover {
+            color: var(--color-black);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--color-dark);
+            padding: 5rem 0 2rem;
+            position: relative;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .footer-tagline {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+        
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-hours h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-gold);
+            padding-left: 5px;
+        }
+        
+        .footer-contact p,
+        .footer-hours p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-text-light);
+        }
+        
+        .footer-contact i,
+        .footer-hours i {
+            color: var(--color-gold);
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--color-gold);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+        
+        .social-links a:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--color-gold);
+            color: var(--color-black);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition-normal);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-dark);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition-normal);
+                border-top: 1px solid rgba(212, 175, 55, 0.1);
+                box-shadow: var(--shadow-xl);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                height: 40vh;
+                min-height: 350px;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .faq-question {
+                padding: 1.25rem 1.5rem;
+            }
+            
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .transportation-info {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .map-info-card {
+                padding: 1.25rem;
+            }
+            
+            .map-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1><span class="logo-highlight">Ibex</span> Ethiopian</h1>
+                    <p class="logo-subtitle">Bar & Restaurant</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Get in Touch</div>
+                <h2 class="hero-title">Contact Us</h2>
+                <p class="hero-subtitle">Get in Touch with Ibex Ethiopian</p>
+                <p class="hero-description">We'd love to hear from you. Reach out for reservations, questions, or feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-info section-padding">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Our Location</h3>
+                    <p>1024 Shady Lane Rd</p>
+                    <p>Columbus, OH 43227</p>
+                    <a href="#map" class="link">View on Map</a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Phone Number</h3>
+                    <p class="contact-phone">(614) 694-2200</p>
+                    <p>Call us for reservations or inquiries</p>
+                </div>
+             
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hours of Operation</h3>
+                    <p><strong>Tuesday - Thursday:</strong> 11:00 AM - 11:00 PM</p>
+                    <p><strong>Friday - Saturday:</strong> 11:00 AM - 2:30 AM</p>
+                    <p><strong>Sunday:</strong> 9:00 AM - 11:00 PM</p>
+                    <p><strong>Monday:</strong> Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="contact-form-map section-padding bg-light">
+        <div class="container">
+            <div class="form-map-grid">
+              
+                <div class="map-container" id="map">
+                    <div class="section-header">
+                        <h2 class="section-title">Find Us</h2>
+                        <p class="section-subtitle">Visit us in Columbus, Ohio</p>
+                        <div class="section-divider">
+                            <div class="divider-line"></div>
+                            <div class="divider-dot"></div>
+                            <div class="divider-line"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Map -->
+                    <div class="map-wrapper">
+                        <div class="map-frame">
+                            <!-- Google Maps Embed -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.785111587013!2d-82.92046882368772!3d39.955747871642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8838890c3c2c7f7f%3A0x6b4d3f2b3b3b3b3b!2s1024%20Shady%20Lane%20Rd%2C%20Columbus%2C%20OH%2043227!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                                width="100%" 
+                                height="400" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                title="Ibex Ethiopian Bar & Restaurant Location"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            
+                            <!-- Map Overlay Info -->
+                            <div class="map-overlay">
+                                <div class="map-info-card">
+                                    <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                                    <p><strong>Address:</strong> 1024 Shady Lane Rd, Columbus, OH 43227</p>
+                                    <p><strong>Phone:</strong> (614) 694-2200</p>
+                                    <p><strong>Hours:</strong> Tue-Sat: 11AM-2:30AM, Sun: 9AM-11PM</p>
+                                    
+                                    <div class="map-actions">
+                                        <a href="https://maps.google.com/?q=1024+Shady+Lane+Rd+Columbus+OH+43227" 
+                                           target="_blank" 
+                                           class="btn-map">
+                                            <i class="fas fa-directions"></i> Get Directions
+                                        </a>
+                                        <a href="tel:+16146942200" class="btn-map">
+                                            <i class="fas fa-phone"></i> Call Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Transportation Info -->
+                        <div class="transportation-info">
+                           
+                            
+                            <div class="transport-item">
+                                <i class="fas fa-bus"></i>
+                                <div>
+                                    <h4>Public Transit</h4>
+                                    <p>Bus lines: 5, 12, 22 stop nearby</p>
+                                </div>
+                            </div>
+                            
+                            <div class="transport-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Distance</h4>
+                                    <p>15 minutes from downtown Columbus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions about dining with us</p>
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do I need a reservation?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Reservations are recommended, especially on weekends and for groups of 4 or more. Walk-ins are always welcome and we'll do our best to accommodate you based on availability.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there parking available?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Street parking is available on Shady Lane Rd.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you accommodate dietary restrictions?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer vegetarian, vegan, and gluten-free options. Please inform your server of any allergies or dietary restrictions when ordering.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you host private events?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer private dining for events, parties, and gatherings. Contact us directly for availability and pricing for groups of 10 or more.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is the dress code?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We maintain a casual to smart casual dress code. While we welcome guests in comfortable attire, we ask that you avoid overly casual beachwear or athletic clothing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Still Have Questions?</h2>
+                <p>Feel free to call us directly during business hours.</p>
+                <div class="cta-buttons">
+                    <a href="tel:+16146942200" class="btn btn-primary">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3><span class="logo-highlight">Ibex</span> Ethiopian</h3>
+                    <p class="logo-subtitle">Bar & Restaurant</p>
+                    <p class="footer-tagline">Authentic Ethiopian flavors served with heart.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 1024 Shady Lane Rd, Columbus, OH</p>
+                    <p><i class="fas fa-phone"></i> (614) 694-2200</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p><i class="fas fa-clock"></i> Tue-Thu: 11AM-11PM</p>
+                    <p><i class="fas fa-clock"></i> Fri-Sat: 11AM-2:30AM</p>
+                    <p><i class="fas fa-clock"></i> Sun: 9AM-11PM</p>
+                    <p><i class="fas fa-clock"></i> Mon: Closed</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-yelp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+                              
+                <p class="copyright">&copy; <span class="current-year">2024</span> Ibex Ethiopian Bar & Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            const currentYearElement = document.querySelector('.current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = new Date().getFullYear();
+            }
+            
+            // FAQ toggle functionality
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    const answer = faqItem.querySelector('.faq-answer');
+                    const icon = this.querySelector('i');
+                    
+                    // Toggle active class
+                    faqItem.classList.toggle('active');
+                    
+                    // Toggle icon and answer visibility
+                    if (faqItem.classList.contains('active')) {
+                        icon.className = 'fas fa-chevron-up';
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        answer.style.opacity = '1';
+                    } else {
+                        icon.className = 'fas fa-chevron-down';
+                        answer.style.maxHeight = '0';
+                        answer.style.opacity = '0';
+                    }
+                    
+                    // Close other FAQ items
+                    faqQuestions.forEach(otherQuestion => {
+                        if (otherQuestion !== this) {
+                            const otherFaqItem = otherQuestion.parentElement;
+                            const otherAnswer = otherFaqItem.querySelector('.faq-answer');
+                            const otherIcon = otherQuestion.querySelector('i');
+                            
+                            if (otherFaqItem.classList.contains('active')) {
+                                otherFaqItem.classList.remove('active');
+                                otherIcon.className = 'fas fa-chevron-down';
+                                otherAnswer.style.maxHeight = '0';
+                                otherAnswer.style.opacity = '0';
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Contact form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = this.querySelector('.btn-primary');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        alert('Thank you for your message! We will respond within 24-48 hours.');
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        this.reset();
+                    }, 1500);
+                });
+            }
+            
+            // Header scroll effect and mobile menu
+            const header = document.querySelector('.header');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // Back to top button
+                if (backToTopBtn) {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                }
+            });
+            
+            // Mobile menu toggle
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>' 
+                        : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+            }
+            
+            // Back to top button
+            if (backToTopBtn) {
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
